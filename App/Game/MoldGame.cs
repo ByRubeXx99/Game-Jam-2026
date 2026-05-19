@@ -11,32 +11,33 @@ namespace Mold
 		public static RenderWindow rw;
 		private Mold mo;
 		private Food f;
-		private HUD h; 
-		private CarNew _car;
-    public List<Food> Foods = new List<Food>();
-    private float timer=0;  
-    public List<CarNew> Cars = new List<CarNew>();
-    public void Init(){
-			VideoMode videoMode = new VideoMode(640, 480);
+		private HUD h;
+
+		private Texture backGroundTexture;
+		private Sprite backGroundSprite;
+		
+		public List<Food> Foods = new List<Food>();
+		public List<CarNew> Cars = new List<CarNew>();
+		
+		private Random rnd = new Random();
+		private float carTimer = 0;
+		private float carSpawnTimer = 2.0f;
+		
+		private float foodTimer = 0;
+		private float nextFoodSpawn = 0f;
+		private bool isFoodActive = true;
+		public void Init(){
+			VideoMode videoMode = new VideoMode(1920, 1080);
 			rw = new RenderWindow(videoMode, "snakeGame");
-			h = new HUD ();
-            _car = new CarNew();
-			Food p0 = new Food();
-			Food p1 = new Food();
-
-			Foods.Add (p0);
-			Foods.Add (p1);
-
-			foreach (Food a in Foods) {
-				a.Dispose ();
-			}
-
-			System.Threading.Thread.Sleep (5000);
-			//=========================== AQUI !!!!! =============================
-
-			f = new Food ();
-			f.newPos ();
+			
+			backGroundTexture = new Texture("Data/Textures/Background.png");
+			backGroundSprite = new Sprite(backGroundTexture);
+			
 			mo = new Mold(rw.Size.X/2.0f, rw.Size.Y/2.0f);
+			h = new HUD (mo);
+
+			f = new Food();
+			f.newPos();
 		}
 		public void DeInit(){
 			rw.Dispose ();
@@ -48,40 +49,58 @@ namespace Mold
 			}
 			rw.DispatchEvents();
 			
-			//_car.Update(dt);
 			f.Update(dt);
 			mo.Update (dt);
 			h.Update (dt);
-			timer += dt;  
-			if (timer>2)
+			
+			carTimer += dt;  
+			if (carTimer >= carSpawnTimer)
 			{
-				
-				_car = new CarNew(); 
-				Cars.Add(_car);
-				timer = 0;
+				Cars.Add(new CarNew());
+				carTimer = 0;
+				carSpawnTimer = (float)(rnd.NextDouble() * 3.0 + 5.0);
 			} 
 			foreach (CarNew car in Cars)
 			{
 				car.Update(dt);
 			}
-			if (mo.GetGlobalBounds ().Intersects (f.GetGlobalBounds())) {
-				h.ScoreAdd ();
-				f.newPos ();
+
+			Cars.RemoveAll(c => c.Position.X < -300);
+			if (isFoodActive)
+			{
+				f.Update(dt);
+				if (mo.GetGlobalBounds().Intersects(f.GetGlobalBounds())) {
+					h.ScoreAdd ();
+					isFoodActive = false;
+					foodTimer = 0;
+					nextFoodSpawn = (float)(rnd.NextDouble() * 5.0 + 3.0);
+				}
 			}
+			else
+			{
+				foodTimer += dt;
+				if (foodTimer >= nextFoodSpawn)
+				{
+					f.newPos();
+					isFoodActive = true;
+				}
+			}
+			
 		}
 		public void Draw(){
 			rw.Clear (); 
+			rw.Draw (backGroundSprite);
 			foreach (CarNew car in Cars)
 			{
 				rw.Draw(car);
-				
 			}
-			rw.Draw (h);
+			if (isFoodActive)
+			{
+				rw.Draw (f);
+			}
 			rw.Draw(mo);
-			rw.Draw (f);
+			rw.Draw (h);
 			rw.Display (); 
-			rw.Draw (_car); 
-			
 		}
 		public bool IsAlive()
 		{

@@ -32,8 +32,8 @@ namespace Mold
 		public void newPos(){
 			Random r = new Random ();
 			Position = new Vector2f(
-				r.Next (16, (int) MoldGame.rw.Size.X-16),
-				r.Next (128, (int)MoldGame.rw.Size.Y-16));
+				r.Next (0, 1919),
+				r.Next (270, 810));
 			sp.FrameTime = r.Next (10, 100) / 100.0f;
 		}
 	}

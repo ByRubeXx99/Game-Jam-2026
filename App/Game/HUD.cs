@@ -7,26 +7,35 @@ namespace Mold
 {
 	public class HUD: Transformable, Drawable
 	{
-		private int puntos;
+		private int points;
 		Font f;
 		Text t;
 
-		public HUD ()
+		private Mold player;
+		private bool hasChangedPhase;
+		public HUD (Mold playerInstance)
 		{
-			puntos = 0;
+			player =  playerInstance;
+			points = 0;
 			f = new Font ("Data/arial.ttf");
 			t = new Text ("Puntos: ", f);
+			hasChangedPhase = false;
 		}
 
 		public void Update(float dt){
-			t.DisplayedString=String.Format("Puntos: {0}",puntos);
+			t.DisplayedString=String.Format("Puntos: {0}",points);
+			if (points >= 15 && !hasChangedPhase)
+			{
+				player.ChangePhase();
+				hasChangedPhase = true;
+			}
 		}
 
 		public void Draw(RenderTarget rt, RenderStates st){
 			rt.Draw (t);
 		}
 		public void ScoreAdd(){
-			puntos++;
+			points++;
 		}
 	}
 }
