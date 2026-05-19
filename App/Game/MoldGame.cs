@@ -11,14 +11,16 @@ namespace Mold
 		public static RenderWindow rw;
 		private Mold mo;
 		private Food f;
-		private HUD h;
+		private HUD h; 
+		private CarNew _car;
     public List<Food> Foods = new List<Food>();
-
+    private float timer=0;  
+    public List<CarNew> Cars = new List<CarNew>();
     public void Init(){
 			VideoMode videoMode = new VideoMode(640, 480);
 			rw = new RenderWindow(videoMode, "snakeGame");
 			h = new HUD ();
-
+            _car = new CarNew();
 			Food p0 = new Food();
 			Food p1 = new Food();
 
@@ -45,22 +47,38 @@ namespace Mold
 				rw.Close();
 			}
 			rw.DispatchEvents();
-
+			_car.Update(dt);
 			f.Update(dt);
 			mo.Update (dt);
 			h.Update (dt);
-
+			timer += dt;  
+			if (timer>2)
+			{
+				
+				_car = new CarNew(); 
+				Cars.Add(_car);
+				timer = 0;
+			}
 			if (mo.GetGlobalBounds ().Intersects (f.GetGlobalBounds())) {
 				h.ScoreAdd ();
 				f.newPos ();
 			}
 		}
 		public void Draw(){
-			rw.Clear ();
+			rw.Clear (); 
+			foreach (CarNew car in Cars)
+			{
+				rw.Draw(car);
+				
+			}
 			rw.Draw (h);
 			rw.Draw(mo);
 			rw.Draw (f);
-			rw.Display ();
+			rw.Display (); 
+			rw.Draw (_car); 
+			
+			 
+			
 		}
 		public bool IsAlive()
 		{

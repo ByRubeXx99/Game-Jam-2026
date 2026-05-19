@@ -460,24 +460,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\usuari\\.nuget\\packages\\": {}
+    "C:\\Users\\dimit\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\usuari\\Documents\\GitHub\\Game-Jam-2026\\App\\App.csproj",
+      "projectUniqueName": "C:\\Users\\dimit\\Desktop\\Practica poo2\\Game-Jam-2026\\App\\App.csproj",
       "projectName": "App",
-      "projectPath": "C:\\Users\\usuari\\Documents\\GitHub\\Game-Jam-2026\\App\\App.csproj",
-      "packagesPath": "C:\\Users\\usuari\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usuari\\Documents\\GitHub\\Game-Jam-2026\\App\\obj\\",
+      "projectPath": "C:\\Users\\dimit\\Desktop\\Practica poo2\\Game-Jam-2026\\App\\App.csproj",
+      "packagesPath": "C:\\Users\\dimit\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dimit\\Desktop\\Practica poo2\\Game-Jam-2026\\App\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\usuari\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\dimit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -496,7 +498,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -523,7 +525,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.313/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
