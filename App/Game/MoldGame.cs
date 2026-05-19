@@ -32,7 +32,6 @@ namespace Mold
 			}
 
 			System.Threading.Thread.Sleep (5000);
-			//=========================== AQUI !!!!! =============================
 
 			f = new Food ();
 			f.newPos ();

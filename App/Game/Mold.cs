@@ -9,8 +9,9 @@ namespace Mold
 	{
 		public Mold ( float _x, float _y)
 		{
-			Texture = new Texture ("Data/player.png");
+			Texture = new Texture ("Data/Textures/Mold1.png");
 			Center ();
+			Scale = Scale / 4;
 			Position = new Vector2f (_x, _y);
 		}
 
@@ -22,7 +23,7 @@ namespace Mold
 
 			Forward = dist.Normal ();
 			Speed = dist.Size () / 2.0f;
-			Rotation = (float) Math.Atan2(Forward.Y, Forward.X) * MathUtil.RAD2DEG;
+			Rotation = (float) Math.Atan2(Forward.Y, Forward.X) * MathUtil.RAD2DEG + 90;
 		}
 
 	}
