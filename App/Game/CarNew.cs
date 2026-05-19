@@ -13,14 +13,14 @@ public class CarNew:Transformable, Drawable
     private float speed;
     public CarNew ()
     {
-        sp = new AnimatedSprite (new Texture ("Data/food2.png"), 4, 1);	
-        sp.FrameTime = 1.0f; 
+        sp = new AnimatedSprite (new Texture ("Data/Textures/Car2.png"), 3, 1);	
+       // sp.FrameTime = 1.0f; 
         Forward = new Vector2f(-1.0f,0.0f);
         speed = 45; 
         newPos();
     }
     public void Update( float dt){
-        sp.Update (dt); 
+        //sp.Update (dt); 
         Position+=Forward*speed*dt;
     }
     public void Draw(RenderTarget rt, RenderStates st){

@@ -47,7 +47,8 @@ namespace Mold
 				rw.Close();
 			}
 			rw.DispatchEvents();
-			_car.Update(dt);
+			
+			//_car.Update(dt);
 			f.Update(dt);
 			mo.Update (dt);
 			h.Update (dt);
@@ -58,6 +59,10 @@ namespace Mold
 				_car = new CarNew(); 
 				Cars.Add(_car);
 				timer = 0;
+			} 
+			foreach (CarNew car in Cars)
+			{
+				car.Update(dt);
 			}
 			if (mo.GetGlobalBounds ().Intersects (f.GetGlobalBounds())) {
 				h.ScoreAdd ();
@@ -76,8 +81,6 @@ namespace Mold
 			rw.Draw (f);
 			rw.Display (); 
 			rw.Draw (_car); 
-			
-			 
 			
 		}
 		public bool IsAlive()

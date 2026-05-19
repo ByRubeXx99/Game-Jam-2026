@@ -249,3 +249,4 @@ C:\Users\dimit\Desktop\Practica poo2\Game-Jam-2026\App\obj\Debug\net8.0\refint\A
 C:\Users\dimit\Desktop\Practica poo2\Game-Jam-2026\App\obj\Debug\net8.0\App.pdb
 C:\Users\dimit\Desktop\Practica poo2\Game-Jam-2026\App\obj\Debug\net8.0\App.genruntimeconfig.cache
 C:\Users\dimit\Desktop\Practica poo2\Game-Jam-2026\App\obj\Debug\net8.0\ref\App.dll
+C:\Users\dimit\Desktop\Practica poo2\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Car2.png
