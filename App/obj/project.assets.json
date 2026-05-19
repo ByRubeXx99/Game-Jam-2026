@@ -460,19 +460,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jangr\\.nuget\\packages\\": {}
+    "C:\\Users\\javib\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jangr\\Documents\\Uni\\Trimestre 3\\106132 - Programacio II\\GameJam\\Game-Jam-2026\\App\\App.csproj",
+      "projectUniqueName": "C:\\Users\\javib\\Documents\\GitHub\\Game-Jam-2026\\App\\App.csproj",
       "projectName": "App",
-      "projectPath": "C:\\Users\\jangr\\Documents\\Uni\\Trimestre 3\\106132 - Programacio II\\GameJam\\Game-Jam-2026\\App\\App.csproj",
-      "packagesPath": "C:\\Users\\jangr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jangr\\Documents\\Uni\\Trimestre 3\\106132 - Programacio II\\GameJam\\Game-Jam-2026\\App\\obj\\",
+      "projectPath": "C:\\Users\\javib\\Documents\\GitHub\\Game-Jam-2026\\App\\App.csproj",
+      "packagesPath": "C:\\Users\\javib\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\javib\\Documents\\GitHub\\Game-Jam-2026\\App\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\jangr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\javib\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -498,7 +503,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -525,7 +530,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\jangr\\.dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
