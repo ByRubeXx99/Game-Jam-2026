@@ -26,6 +26,12 @@ namespace Mold
 			Rotation = (float) Math.Atan2(Forward.Y, Forward.X) * MathUtil.RAD2DEG + 90;
 		}
 
+		public void Upgrade()
+		{
+			Texture = new Texture ("Data/Textures/Mold2.png");
+			Center ();
+		}
+
 	}
 }
 

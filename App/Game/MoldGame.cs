@@ -13,13 +13,14 @@ namespace Mold
 		private Food f;
 		private HUD h; 
 		private CarNew _car;
-    public List<Food> Foods = new List<Food>();
-    private float timer=0;  
-    public List<CarNew> Cars = new List<CarNew>();
-    public void Init(){
+		public List<Food> Foods = new List<Food>();
+		private float timer=0;  
+		public List<CarNew> Cars = new List<CarNew>();
+		public void Init(){
 			VideoMode videoMode = new VideoMode(640, 480);
 			rw = new RenderWindow(videoMode, "snakeGame");
 			h = new HUD ();
+			
             _car = new CarNew();
 			Food p0 = new Food();
 			Food p1 = new Food();
@@ -48,7 +49,6 @@ namespace Mold
 			rw.DispatchEvents();
 			
 			//_car.Update(dt);
-			f.Update(dt);
 			mo.Update (dt);
 			h.Update (dt);
 			timer += dt;  
@@ -66,6 +66,11 @@ namespace Mold
 			if (mo.GetGlobalBounds ().Intersects (f.GetGlobalBounds())) {
 				h.ScoreAdd ();
 				f.newPos ();
+			}
+
+			if (h.puntos > 15)
+			{
+				mo.Upgrade();
 			}
 		}
 		public void Draw(){

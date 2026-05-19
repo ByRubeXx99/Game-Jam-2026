@@ -7,7 +7,7 @@ namespace Mold
 {
 	public class HUD: Transformable, Drawable
 	{
-		private int puntos;
+		public int puntos;
 		Font f;
 		Text t;
 
