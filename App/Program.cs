@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace Snake
+namespace Mold
 {
 	class MainClass
 	{
 		public static void Main (string[] args)
 		{
 			Engine e = new Engine();
-			e.Run( new SnakeGame());
+			e.Run( new MoldGame());
 		}
 	}
 }

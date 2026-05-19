@@ -4,12 +4,12 @@ using SFML.Graphics;
 using System.Collections.Generic;
 using SFML.System;
 
-namespace Snake
+namespace Mold
 {
-	public class SnakeGame: Game
+	public class MoldGame: Game
 	{
 		public static RenderWindow rw;
-		private Snake sn;
+		private Mold mo;
 		private Food f;
 		private HUD h;
     public List<Food> Foods = new List<Food>();
@@ -18,8 +18,6 @@ namespace Snake
 			VideoMode videoMode = new VideoMode(640, 480);
 			rw = new RenderWindow(videoMode, "snakeGame");
 			h = new HUD ();
-
-			//=========================== AQUI !!!!! =============================
 
 			Food p0 = new Food();
 			Food p1 = new Food();
@@ -36,7 +34,7 @@ namespace Snake
 
 			f = new Food ();
 			f.newPos ();
-			sn = new Snake(rw.Size.X/2.0f, rw.Size.Y/2.0f);
+			mo = new Mold(rw.Size.X/2.0f, rw.Size.Y/2.0f);
 		}
 		public void DeInit(){
 			rw.Dispose ();
@@ -49,10 +47,10 @@ namespace Snake
 			rw.DispatchEvents();
 
 			f.Update(dt);
-			sn.Update (dt);
+			mo.Update (dt);
 			h.Update (dt);
 
-			if (sn.GetGlobalBounds ().Intersects (f.GetGlobalBounds())) {
+			if (mo.GetGlobalBounds ().Intersects (f.GetGlobalBounds())) {
 				h.ScoreAdd ();
 				f.newPos ();
 			}
@@ -60,7 +58,7 @@ namespace Snake
 		public void Draw(){
 			rw.Clear ();
 			rw.Draw (h);
-			rw.Draw(sn);
+			rw.Draw(mo);
 			rw.Draw (f);
 			rw.Display ();
 		}

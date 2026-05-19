@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Czyf91aRLvk=",
+  "dgSpecHash": "RBpF5Fe3DZc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\usuari\\Desktop\\ASSIGNATURAS\\UNI\\2ndo GRADO\\106132 - PROGRAMACIÓ II\\S4E5 Snake List 2\\S4E5 Snake List\\App\\App.csproj",
+  "projectFilePath": "C:\\Users\\usuari\\Documents\\GitHub\\Game-Jam-2026\\App\\App.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\usuari\\.nuget\\packages\\csfml\\2.5.0\\csfml.2.5.0.nupkg.sha512",
     "C:\\Users\\usuari\\.nuget\\packages\\sfml.audio\\2.5.0\\sfml.audio.2.5.0.nupkg.sha512",

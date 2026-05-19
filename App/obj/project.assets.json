@@ -465,11 +465,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\usuari\\Desktop\\ASSIGNATURAS\\UNI\\2ndo GRADO\\106132 - PROGRAMACIÓ II\\S4E5 Snake List 2\\S4E5 Snake List\\App\\App.csproj",
+      "projectUniqueName": "C:\\Users\\usuari\\Documents\\GitHub\\Game-Jam-2026\\App\\App.csproj",
       "projectName": "App",
-      "projectPath": "C:\\Users\\usuari\\Desktop\\ASSIGNATURAS\\UNI\\2ndo GRADO\\106132 - PROGRAMACIÓ II\\S4E5 Snake List 2\\S4E5 Snake List\\App\\App.csproj",
+      "projectPath": "C:\\Users\\usuari\\Documents\\GitHub\\Game-Jam-2026\\App\\App.csproj",
       "packagesPath": "C:\\Users\\usuari\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usuari\\Desktop\\ASSIGNATURAS\\UNI\\2ndo GRADO\\106132 - PROGRAMACIÓ II\\S4E5 Snake List 2\\S4E5 Snake List\\App\\obj\\",
+      "outputPath": "C:\\Users\\usuari\\Documents\\GitHub\\Game-Jam-2026\\App\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\usuari\\AppData\\Roaming\\NuGet\\NuGet.Config"

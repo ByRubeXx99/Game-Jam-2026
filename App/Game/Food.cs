@@ -3,7 +3,7 @@ using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
 
-namespace Snake
+namespace Mold
 {
 	public class Food: Transformable, Drawable
 	{
@@ -32,8 +32,8 @@ namespace Snake
 		public void newPos(){
 			Random r = new Random ();
 			Position = new Vector2f(
-				r.Next (16, (int) SnakeGame.rw.Size.X-16),
-				r.Next (128, (int)SnakeGame.rw.Size.Y-16));
+				r.Next (16, (int) MoldGame.rw.Size.X-16),
+				r.Next (128, (int)MoldGame.rw.Size.Y-16));
 			sp.FrameTime = r.Next (10, 100) / 100.0f;
 		}
 	}

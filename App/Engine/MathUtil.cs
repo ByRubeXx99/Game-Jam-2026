@@ -2,7 +2,7 @@
 using SFML.Window;
 using SFML.System;
 
-namespace Snake
+namespace Mold
 {
 	public static class MathUtil
 	{

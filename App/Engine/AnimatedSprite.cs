@@ -4,7 +4,7 @@ using SFML.Window;
 using System;
 using SFML.System;
 
-namespace Snake
+namespace Mold
 {
   public class AnimatedSprite : Transformable, Drawable
   {

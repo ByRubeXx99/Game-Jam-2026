@@ -3,7 +3,7 @@ using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
 
-namespace Snake
+namespace Mold
 {
 	public class Actor : Sprite
 	{

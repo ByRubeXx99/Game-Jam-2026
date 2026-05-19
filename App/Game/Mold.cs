@@ -3,20 +3,20 @@ using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
 
-namespace Snake
+namespace Mold
 {
-	public class Snake : Actor
+	public class Mold : Actor
 	{
-		public Snake ( float _x, float _y)
+		public Mold ( float _x, float _y)
 		{
 			Texture = new Texture ("Data/player.png");
-			base.Center ();
+			Center ();
 			Position = new Vector2f (_x, _y);
 		}
 
 		public override void Update(float dt){
 			base.Update (dt);
-			Vector2f mousePos = new Vector2f (Mouse.GetPosition(SnakeGame.rw).X, Mouse.GetPosition(SnakeGame.rw).Y);
+			Vector2f mousePos = new Vector2f (Mouse.GetPosition(MoldGame.rw).X, Mouse.GetPosition(MoldGame.rw).Y);
 
 			Vector2f dist = mousePos-Position;
 

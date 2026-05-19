@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace Snake
+namespace Mold
 {
 	public class Engine
 	{

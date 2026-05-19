@@ -1,4 +1,4 @@
-﻿namespace Snake
+﻿namespace Mold
 {
 	public interface Game
 	{
