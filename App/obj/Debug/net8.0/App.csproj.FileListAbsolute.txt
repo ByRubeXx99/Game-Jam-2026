@@ -82,11 +82,7 @@ C:\Users\usuari\Desktop\ASSIGNATURAS\UNI\2ndo GRADO\106132 - PROGRAMACIÓ II\S4E
 C:\Users\usuari\Desktop\ASSIGNATURAS\UNI\2ndo GRADO\106132 - PROGRAMACIÓ II\S4E5 Snake List 2\S4E5 Snake List\App\obj\Debug\net8.0\App.genruntimeconfig.cache
 C:\Users\usuari\Desktop\ASSIGNATURAS\UNI\2ndo GRADO\106132 - PROGRAMACIÓ II\S4E5 Snake List 2\S4E5 Snake List\App\obj\Debug\net8.0\ref\App.dll
 C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Arial.ttf
-C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\food.png
-C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\food2.png
-C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\player.png
 C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\App.exe
-C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\throne.png
 C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\App.deps.json
 C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\App.runtimeconfig.json
 C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\App.dll

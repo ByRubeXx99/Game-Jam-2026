@@ -8,8 +8,10 @@ namespace Mold
 	public class HUD: Transformable, Drawable
 	{
 		private int points;
+		private int health;
 		Font f;
 		Text t;
+		Text tH;
 
 		private Mold player;
 		private bool hasChangedPhase;
@@ -17,14 +19,19 @@ namespace Mold
 		{
 			player =  playerInstance;
 			points = 0;
+			health = 100;
 			f = new Font ("Data/arial.ttf");
 			t = new Text ("Puntos: ", f);
+			tH = new Text("Health: ", f);
 			hasChangedPhase = false;
 		}
 
 		public void Update(float dt){
-			t.DisplayedString=String.Format("Puntos: {0}",points);
-			if (points >= 15 && !hasChangedPhase)
+			t.DisplayedString = String.Format("Food: {0}",points);
+			t.Position = new Vector2f(20f, 20f);
+			tH.DisplayedString = String.Format("Health: {0}",health);
+			tH.Position = new Vector2f(150f, 20f);
+			if (points >= 2 && !hasChangedPhase)
 			{
 				player.ChangePhase();
 				hasChangedPhase = true;
@@ -33,9 +40,15 @@ namespace Mold
 
 		public void Draw(RenderTarget rt, RenderStates st){
 			rt.Draw (t);
+			rt.Draw (tH);
 		}
 		public void ScoreAdd(){
 			points++;
+		}
+
+		public void RestHealth()
+		{
+			health = health - 10;
 		}
 	}
 }

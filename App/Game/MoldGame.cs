@@ -16,7 +16,6 @@ namespace Mold
 		private Texture backGroundTexture;
 		private Sprite backGroundSprite;
 		
-		public List<Food> Foods = new List<Food>();
 		public List<CarNew> Cars = new List<CarNew>();
 		
 		private Random rnd = new Random();
@@ -73,7 +72,7 @@ namespace Mold
 			{
 				Cars.Add(new CarNew());
 				carTimer = 0;
-				carSpawnTimer = (float)(rnd.NextDouble() * 3.0 + 5.0);
+				carSpawnTimer = (float)(rnd.NextDouble() * 3.0 + 3.0);
 			} 
 
 			if (currentState == GameState.StartMenu)
@@ -85,10 +84,21 @@ namespace Mold
 
 				return;
 			}
-
-			foreach (CarNew car in Cars)
+			
+			for (int i = Cars.Count - 1; i >= 0; i--)
 			{
+				CarNew car = Cars[i];
 				car.Update(dt);
+
+				if (mo.GetGlobalBounds().Intersects(car.GetGlobalBounds()))
+				{
+					h.RestHealth();
+					Cars.RemoveAt(i);
+					//if ( <= 0)
+					{
+						// currentState = GameState.GameOver;
+					}
+				}
 			}
 
 			Cars.RemoveAll(c => c.Position.X < -300);
@@ -98,7 +108,7 @@ namespace Mold
 					h.ScoreAdd ();
 					isFoodActive = false;
 					foodTimer = 0;
-					nextFoodSpawn = (float)(rnd.NextDouble() * 5.0 + 3.0);
+					nextFoodSpawn = (float)(rnd.NextDouble() * 5.0 + 2.0);
 				}
 			}
 			else
@@ -110,7 +120,6 @@ namespace Mold
 					isFoodActive = true;
 				}
 			}
-			
 		}
 		public void Draw(){
 			rw.Clear (); 

@@ -21,13 +21,14 @@ public class CarNew:Transformable, Drawable
         int textureIndex = r.Next(0, textures.Length);
         Texture tex = new Texture(textures[textureIndex]);
         sp = new AnimatedSprite (tex, 3, 1);	
-        sp.Scale = new Vector2f(4.0f, 4.0f);
-        speed = r.Next(80, 150);
+        Scale = new Vector2f(4.0f, 4.0f);
+        speed = r.Next(200, 400);
         Forward = new Vector2f(-1.0f,0.0f);
         newPos();
     }
     public void Update( float dt){
         Position += Forward * speed * dt;
+        sp.Update(dt);
     }
     
     public void Draw(RenderTarget rt, RenderStates st){
@@ -45,7 +46,7 @@ public class CarNew:Transformable, Drawable
     public void newPos()
     {
         Random r = new Random();
-        Position = new Vector2f(1920, r.Next (270, 810));
+        Position = new Vector2f(1920, r.Next (270, 750));
         sp.FrameTime = r.Next (10, 100) / 100.0f; 
     }
 }
