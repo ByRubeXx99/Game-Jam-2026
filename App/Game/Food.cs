@@ -7,15 +7,13 @@ namespace Mold
 {
 	public class Food: Transformable, Drawable
 	{
-		private AnimatedSprite sp;
+		private Sprite sp;
 		public Food ()
 		{
-			sp = new AnimatedSprite (new Texture ("Data/food2.png"), 4, 1);	
-			sp.FrameTime = 1.0f;
+			Random r = new Random();
+			sp = new Sprite (new Texture ("Data/Textures/Food"+ r.Next(1, 3) +".png"));
+			Scale = Scale / 6;
 			newPos();
-		}
-		public void Update( float dt){
-			sp.Update (dt);
 		}
 		public void Draw(RenderTarget rt, RenderStates st){
 			st.Transform *= Transform;
@@ -35,6 +33,7 @@ namespace Mold
 				r.Next (0, 1919),
 				r.Next (270, 810));
 			sp.FrameTime = r.Next (10, 100) / 100.0f;
+			sp = new Sprite (new Texture ("Data/Textures/Food"+ r.Next(1, 4) +".png"));
 		}
 	}
 }

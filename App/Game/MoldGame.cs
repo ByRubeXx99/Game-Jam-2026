@@ -6,13 +6,13 @@ using SFML.System;
 
 namespace Mold
 {
-	public class MoldGame: Game
+	public class MoldGame : Game
 	{
 		public static RenderWindow rw;
+
 		private Mold mo;
 		private Food f;
 		private HUD h;
-
 		private Texture backGroundTexture;
 		private Sprite backGroundSprite;
 		
@@ -26,6 +26,16 @@ namespace Mold
 		private float foodTimer = 0;
 		private float nextFoodSpawn = 0f;
 		private bool isFoodActive = true;
+		
+		private StartMenu menu;
+		private enum GameState
+		{
+			StartMenu,
+			Playing
+		}
+
+		private GameState currentState;
+
 		public void Init(){
 			VideoMode videoMode = new VideoMode(1920, 1080);
 			rw = new RenderWindow(videoMode, "snakeGame");
@@ -38,16 +48,24 @@ namespace Mold
 
 			f = new Food();
 			f.newPos();
+
+			currentState = GameState.StartMenu;
+			menu = new StartMenu();
 		}
-		public void DeInit(){
-			rw.Dispose ();
+
+		public void DeInit()
+		{
+			rw.Dispose();
 		}
-		public void Update( float dt){
+
+		public void Update(float dt)
+		{
+			rw.DispatchEvents();
+
 			if (Keyboard.IsKeyPressed(Keyboard.Key.Escape))
 			{
 				rw.Close();
 			}
-			rw.DispatchEvents();
 			
 			f.Update(dt);
 			mo.Update (dt);
@@ -60,6 +78,17 @@ namespace Mold
 				carTimer = 0;
 				carSpawnTimer = (float)(rnd.NextDouble() * 3.0 + 5.0);
 			} 
+
+			if (currentState == GameState.StartMenu)
+			{
+				if (Keyboard.IsKeyPressed(Keyboard.Key.Enter))
+				{
+					currentState = GameState.Playing;
+				}
+
+				return;
+			}
+
 			foreach (CarNew car in Cars)
 			{
 				car.Update(dt);
@@ -102,6 +131,30 @@ namespace Mold
 			rw.Draw (h);
 			rw.Display (); 
 		}
+
+		public void Draw()
+		{
+			rw.Clear();
+
+			if (currentState == GameState.StartMenu)
+			{
+				rw.Draw(menu);
+			}
+			else
+			{
+				foreach (CarNew car in Cars)
+				{
+					rw.Draw(car);
+				}
+
+				rw.Draw(h);
+				rw.Draw(mo);
+				rw.Draw(f);
+			}
+
+			rw.Display();
+		}
+
 		public bool IsAlive()
 		{
 			return rw.IsOpen;

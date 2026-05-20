@@ -11,8 +11,9 @@ namespace Mold
 		public float MovementSpeed = 250f;
 		public Mold ( float _x, float _y)
 		{
-			Texture = new Texture ("Data/Textures/Mold.png");
+			Texture = new Texture ("Data/Textures/Mold1.png");
 			Center ();
+			Scale = Scale / 4;
 			Position = new Vector2f (_x, _y);
 		}
 
@@ -66,7 +67,7 @@ namespace Mold
 		}
 		public void ChangePhase()
 		{
-			Texture = new Texture("Data/player.png");
+			Texture = new Texture("Data/Textures/Mold2.png");
 			TextureRect = new IntRect(0, 0, (int)Texture.Size.X, (int)Texture.Size.Y);
 			Center();
 		}
