@@ -81,5 +81,11 @@
     </None>
     <None Update="Data\music.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Textures\Mold3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Textures\Mold4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None> </ItemGroup>
 </Project>

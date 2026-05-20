@@ -18,7 +18,9 @@ namespace Mold
 
         private Mold player;
         private bool hasChangedPhase;
-
+        
+        private int[] phaseThresholds = { 5, 10, 15, 20 };
+        private int currentPhaseIndex = 1;
         public HUD(Mold playerInstance)
         {
             player = playerInstance;
@@ -45,11 +47,14 @@ namespace Mold
             l.DisplayedString = String.Format("Level: {0}", level);
             l.Position = new Vector2f(330f, 20f);
 
-            if (points >= 5 && !hasChangedPhase)
+            if (currentPhaseIndex < phaseThresholds.Length)
             {
-                player.ChangePhase();
-                LevelUp();
-                hasChangedPhase = true;
+                if (points >= phaseThresholds[currentPhaseIndex])
+                {
+                    player.ChangePhase(currentPhaseIndex);
+                    LevelUp();
+                    currentPhaseIndex++; 
+                }
             }
         }
 

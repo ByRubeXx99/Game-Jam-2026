@@ -8,7 +8,6 @@ namespace Mold
 	public class Mold : Actor
 	{
 		public float MovementSpeed = 250f;
-		public int textureIndex = 0;
 		string[] textures =
 		{
 			"Data/Textures/Mold1.png",
@@ -18,7 +17,7 @@ namespace Mold
 		};
 		public Mold (float _x, float _y)
 		{
-			Texture = new Texture(textures[textureIndex]);
+			Texture = new Texture(textures[0]);
 			Center ();
 			Scale = Scale / 4;
 			Position = new Vector2f (_x, _y);
@@ -72,10 +71,9 @@ namespace Mold
 				Position = new Vector2f(1920, Position.Y);
 			}
 		}
-		public void ChangePhase()
+		public void ChangePhase(int phaseLevel)
 		{
-			textureIndex ++;
-			Texture = new Texture(textures[textureIndex]);
+			Texture = new Texture(textures[phaseLevel]);
 			TextureRect = new IntRect(0, 0, (int)Texture.Size.X, (int)Texture.Size.Y);
 			Scale =  Scale + Scale/2;
 			Center();
