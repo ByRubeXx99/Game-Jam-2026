@@ -255,9 +255,6 @@ C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Texture
 C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Mold1.png
 C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Mold2.png
 C:\Users\javib\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Arial.ttf
-C:\Users\javib\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\food.png
-C:\Users\javib\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\food2.png
-C:\Users\javib\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\player.png
 C:\Users\javib\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\App.exe
 C:\Users\javib\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Background.png
 C:\Users\javib\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Car2.png
@@ -267,7 +264,6 @@ C:\Users\javib\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures
 C:\Users\javib\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Mold1.png
 C:\Users\javib\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Mold2.png
 C:\Users\javib\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Truck.png
-C:\Users\javib\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\throne.png
 C:\Users\javib\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\App.deps.json
 C:\Users\javib\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\App.runtimeconfig.json
 C:\Users\javib\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\App.dll

@@ -5,51 +5,71 @@ using SFML.System;
 
 namespace Mold
 {
-	public class HUD: Transformable, Drawable
-	{
-		private int points;
-		private int health;
-		Font f;
-		Text t;
-		Text tH;
+    public class HUD : Transformable, Drawable
+    {
+        private int points;
+        private int health;
 
-		private Mold player;
-		private bool hasChangedPhase;
-		public HUD (Mold playerInstance)
-		{
-			player =  playerInstance;
-			points = 0;
-			health = 100;
-			f = new Font ("Data/arial.ttf");
-			t = new Text ("Puntos: ", f);
-			tH = new Text("Health: ", f);
-			hasChangedPhase = false;
-		}
+        Font f;
+        Text t;
+        Text tH;
 
-		public void Update(float dt){
-			t.DisplayedString = String.Format("Food: {0}",points);
-			t.Position = new Vector2f(20f, 20f);
-			tH.DisplayedString = String.Format("Health: {0}",health);
-			tH.Position = new Vector2f(150f, 20f);
-			if (points >= 5 && !hasChangedPhase)
-			{
-				player.ChangePhase();
-				hasChangedPhase = true;
-			}
-		}
+        private Mold player;
+        private bool hasChangedPhase;
 
-		public void Draw(RenderTarget rt, RenderStates st){
-			rt.Draw (t);
-			rt.Draw (tH);
-		}
-		public void ScoreAdd(){
-			points++;
-		}
+        public HUD(Mold playerInstance)
+        {
+            player = playerInstance;
+            points = 0;
+            health = 100;
 
-		public void RestHealth()
-		{
-			health = health - 10;
-		}
-	}
+            f = new Font("Data/arial.ttf");
+
+            t = new Text("Puntos: ", f);
+            tH = new Text("Health: ", f);
+
+            hasChangedPhase = false;
+        }
+
+        public void Update(float dt)
+        {
+            t.DisplayedString = String.Format("Food: {0}", points);
+            t.Position = new Vector2f(20f, 20f);
+
+            tH.DisplayedString = String.Format("Health: {0}", health);
+            tH.Position = new Vector2f(150f, 20f);
+
+            if (points >= 5 && !hasChangedPhase)
+            {
+                player.ChangePhase();
+                hasChangedPhase = true;
+            }
+        }
+
+        public void Draw(RenderTarget rt, RenderStates st)
+        {
+            rt.Draw(t);
+            rt.Draw(tH);
+        }
+
+        public void ScoreAdd()
+        {
+            points++;
+        }
+
+        public void RestHealth()
+        {
+            health -= 10;
+        }
+
+        public int GetPoints()
+        {
+            return points;
+        }
+
+        public int GetHealth()
+        {
+            return health;
+        }
+    }
 }
-

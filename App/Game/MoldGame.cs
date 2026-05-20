@@ -13,42 +13,51 @@ namespace Mold
 		private Mold mo;
 		private Food f;
 		private HUD h;
+
 		private Texture backGroundTexture;
 		private Sprite backGroundSprite;
-		
+
 		public List<CarNew> Cars = new List<CarNew>();
-		
+
 		private Random rnd = new Random();
+
 		private float carTimer = 0;
 		private float carSpawnTimer = 2.0f;
-		
+
 		private float foodTimer = 0;
 		private float nextFoodSpawn = 0f;
+
 		private bool isFoodActive = true;
-		
+
 		private StartMenu menu;
+		private EndingMenu endingMenu;
+
 		private enum GameState
 		{
 			StartMenu,
-			Playing
+			Playing,
+			GameOver
 		}
 
 		private GameState currentState;
 
-		public void Init(){
+		public void Init()
+		{
 			VideoMode videoMode = new VideoMode(1920, 1080);
 			rw = new RenderWindow(videoMode, "snakeGame");
-			
+
 			backGroundTexture = new Texture("Data/Textures/Background.png");
 			backGroundSprite = new Sprite(backGroundTexture);
-			
-			mo = new Mold(rw.Size.X/2.0f, rw.Size.Y/2.0f);
-			h = new HUD (mo);
+
+			mo = new Mold(rw.Size.X / 2.0f, rw.Size.Y / 2.0f);
+
+			h = new HUD(mo);
 
 			f = new Food();
 			f.newPos();
 
 			currentState = GameState.StartMenu;
+
 			menu = new StartMenu();
 		}
 
@@ -57,23 +66,31 @@ namespace Mold
 			rw.Dispose();
 		}
 
+		private void RestartGame()
+		{
+			Cars.Clear();
+
+			mo = new Mold(rw.Size.X / 2.0f, rw.Size.Y / 2.0f);
+
+			h = new HUD(mo);
+
+			f = new Food();
+			f.newPos();
+
+			isFoodActive = true;
+
+			carTimer = 0;
+			foodTimer = 0;
+		}
+
 		public void Update(float dt)
 		{
 			if (Keyboard.IsKeyPressed(Keyboard.Key.Escape))
 			{
 				rw.Close();
 			}
+
 			rw.DispatchEvents();
-			mo.Update (dt);
-			h.Update (dt);
-			
-			carTimer += dt;  
-			if (carTimer >= carSpawnTimer)
-			{
-				Cars.Add(new CarNew());
-				carTimer = 0;
-				carSpawnTimer = (float)(rnd.NextDouble() * 3.0 + 3.0);
-			} 
 
 			if (currentState == GameState.StartMenu)
 			{
@@ -84,49 +101,93 @@ namespace Mold
 
 				return;
 			}
-			
+
+			if (currentState == GameState.GameOver)
+			{
+				if (Keyboard.IsKeyPressed(Keyboard.Key.Enter))
+				{
+					RestartGame();
+					currentState = GameState.StartMenu;
+				}
+
+				return;
+			}
+
+			mo.Update(dt);
+			h.Update(dt);
+
+			carTimer += dt;
+
+			if (carTimer >= carSpawnTimer)
+			{
+				Cars.Add(new CarNew());
+
+				carTimer = 0;
+
+				carSpawnTimer = (float)(rnd.NextDouble() * 3.0 + 3.0);
+			}
+
 			for (int i = Cars.Count - 1; i >= 0; i--)
 			{
 				CarNew car = Cars[i];
+
 				car.Update(dt);
 
 				if (mo.GetGlobalBounds().Intersects(car.GetGlobalBounds()))
 				{
 					h.RestHealth();
+
 					Cars.RemoveAt(i);
-					//if ( <= 0)
+
+					if (h.GetHealth() <= 0)
 					{
-						// currentState = GameState.GameOver;
+						endingMenu = new EndingMenu(h.GetPoints());
+						currentState = GameState.GameOver;
 					}
 				}
 			}
 
 			Cars.RemoveAll(c => c.Position.X < -300);
+
 			if (isFoodActive)
 			{
-				if (mo.GetGlobalBounds().Intersects(f.GetGlobalBounds())) {
-					h.ScoreAdd ();
+				if (mo.GetGlobalBounds().Intersects(f.GetGlobalBounds()))
+				{
+					h.ScoreAdd();
+
 					isFoodActive = false;
+
 					foodTimer = 0;
+
 					nextFoodSpawn = (float)(rnd.NextDouble() * 5.0 + 2.0);
 				}
 			}
 			else
 			{
 				foodTimer += dt;
+
 				if (foodTimer >= nextFoodSpawn)
 				{
 					f.newPos();
+
 					isFoodActive = true;
 				}
 			}
 		}
-		public void Draw(){
-			rw.Clear (); 
-			rw.Draw (backGroundSprite);
+
+		public void Draw()
+		{
+			rw.Clear();
+
+			rw.Draw(backGroundSprite);
+
 			if (currentState == GameState.StartMenu)
 			{
 				rw.Draw(menu);
+			}
+			else if (currentState == GameState.GameOver)
+			{
+				rw.Draw(endingMenu);
 			}
 			else
 			{
@@ -134,15 +195,17 @@ namespace Mold
 				{
 					rw.Draw(car);
 				}
+
 				if (isFoodActive)
 				{
 					rw.Draw(f);
 				}
+
 				rw.Draw(mo);
 				rw.Draw(h);
 			}
-			rw.Display (); 
-			
+
+			rw.Display();
 		}
 
 		public bool IsAlive()
@@ -151,4 +214,3 @@ namespace Mold
 		}
 	}
 }
-
