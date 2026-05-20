@@ -31,7 +31,7 @@ namespace Mold
 			t.Position = new Vector2f(20f, 20f);
 			tH.DisplayedString = String.Format("Health: {0}",health);
 			tH.Position = new Vector2f(150f, 20f);
-			if (points >= 2 && !hasChangedPhase)
+			if (points >= 5 && !hasChangedPhase)
 			{
 				player.ChangePhase();
 				hasChangedPhase = true;
