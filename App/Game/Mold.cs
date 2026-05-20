@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Metadata.Ecma335;
 using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
@@ -75,6 +76,10 @@ namespace Mold
 		{
 			Texture = new Texture(textures[phaseLevel]);
 			TextureRect = new IntRect(0, 0, (int)Texture.Size.X, (int)Texture.Size.Y);
+			if (phaseLevel == 3)
+			{
+				Scale = Scale * 2;
+			}
 			Scale =  Scale + Scale/2;
 			Center();
 		}

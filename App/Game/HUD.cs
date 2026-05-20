@@ -19,7 +19,7 @@ namespace Mold
         private Mold player;
         private bool hasChangedPhase;
         
-        private int[] phaseThresholds = { 1, 5, 10, 15 };
+        private int[] phaseThresholds = { 1, 5, 10, 15};
         private int currentPhaseIndex = 1;
         public HUD(Mold playerInstance)
         {

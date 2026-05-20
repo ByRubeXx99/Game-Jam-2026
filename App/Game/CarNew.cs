@@ -22,7 +22,7 @@ public class CarNew:Transformable, Drawable
         Texture tex = new Texture(textures[textureIndex]);
         sp = new AnimatedSprite (tex, 3, 1);	
         Scale = new Vector2f(4.0f, 4.0f);
-        speed = r.Next(200, 400);
+        speed = r.Next(400, 1000);
         Forward = new Vector2f(-1.0f,0.0f);
         newPos();
     }

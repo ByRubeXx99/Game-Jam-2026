@@ -129,7 +129,7 @@ namespace Mold
 
 				carTimer = 0;
 
-				carSpawnTimer = (float)(rnd.NextDouble() * 3.0 + 3.0);
+				carSpawnTimer = (float)(rnd.NextDouble() * 3.0 + 1.0);
 			}
 
 			for (int i = Cars.Count - 1; i >= 0; i--)
@@ -164,7 +164,7 @@ namespace Mold
 
 					foodTimer = 0;
 
-					nextFoodSpawn = (float)(rnd.NextDouble() * 5.0 + 2.0);
+					nextFoodSpawn = (float)(rnd.NextDouble() * 3.0 + 1.0);
 				}
 			}
 			else
