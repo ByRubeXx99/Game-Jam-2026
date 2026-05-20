@@ -13,6 +13,8 @@ namespace Mold
 		{
 			"Data/Textures/Mold1.png",
 			"Data/Textures/Mold2.png",
+			"Data/Textures/Mold3.png",
+			"Data/Textures/Mold4.png",
 		};
 		public Mold (float _x, float _y)
 		{
