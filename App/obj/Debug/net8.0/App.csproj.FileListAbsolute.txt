@@ -251,6 +251,10 @@ C:\Users\dimit\Desktop\Practica poo2\Game-Jam-2026\App\obj\Debug\net8.0\App.genr
 C:\Users\dimit\Desktop\Practica poo2\Game-Jam-2026\App\obj\Debug\net8.0\ref\App.dll
 C:\Users\dimit\Desktop\Practica poo2\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Car2.png
 C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Car2.png
-C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Mold.png
 C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Truck.png
 C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Background.png
+C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Food1.png
+C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Food2.png
+C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Food3.png
+C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Mold1.png
+C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Mold2.png

@@ -60,14 +60,11 @@ namespace Mold
 
 		public void Update(float dt)
 		{
-			rw.DispatchEvents();
-
 			if (Keyboard.IsKeyPressed(Keyboard.Key.Escape))
 			{
 				rw.Close();
 			}
-			
-			f.Update(dt);
+			rw.DispatchEvents();
 			mo.Update (dt);
 			h.Update (dt);
 			
@@ -97,7 +94,6 @@ namespace Mold
 			Cars.RemoveAll(c => c.Position.X < -300);
 			if (isFoodActive)
 			{
-				f.Update(dt);
 				if (mo.GetGlobalBounds().Intersects(f.GetGlobalBounds())) {
 					h.ScoreAdd ();
 					isFoodActive = false;
@@ -119,23 +115,6 @@ namespace Mold
 		public void Draw(){
 			rw.Clear (); 
 			rw.Draw (backGroundSprite);
-			foreach (CarNew car in Cars)
-			{
-				rw.Draw(car);
-			}
-			if (isFoodActive)
-			{
-				rw.Draw (f);
-			}
-			rw.Draw(mo);
-			rw.Draw (h);
-			rw.Display (); 
-		}
-
-		public void Draw()
-		{
-			rw.Clear();
-
 			if (currentState == GameState.StartMenu)
 			{
 				rw.Draw(menu);
@@ -146,13 +125,15 @@ namespace Mold
 				{
 					rw.Draw(car);
 				}
-
-				rw.Draw(h);
+				if (isFoodActive)
+				{
+					rw.Draw(f);
+				}
 				rw.Draw(mo);
-				rw.Draw(f);
+				rw.Draw(h);
 			}
-
-			rw.Display();
+			rw.Display (); 
+			
 		}
 
 		public bool IsAlive()

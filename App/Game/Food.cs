@@ -29,10 +29,7 @@ namespace Mold
 		}
 		public void newPos(){
 			Random r = new Random ();
-			Position = new Vector2f(
-				r.Next (0, 1919),
-				r.Next (270, 810));
-			sp.FrameTime = r.Next (10, 100) / 100.0f;
+			Position = new Vector2f(r.Next (0, 1919), r.Next (270, 810));
 			sp = new Sprite (new Texture ("Data/Textures/Food"+ r.Next(1, 4) +".png"));
 		}
 	}

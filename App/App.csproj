@@ -59,6 +59,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Data\Textures\Background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\Textures\Mold2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -76,7 +78,5 @@
     </None>
     <None Update="Data\Textures\Food3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
+    </None> </ItemGroup>
 </Project>
