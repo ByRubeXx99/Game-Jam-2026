@@ -9,9 +9,11 @@ namespace Mold
         private Font font;
         private Text title;
         private Text pressEnter;
+        private Text instructions;
 
         private RectangleShape titleFrame;
         private RectangleShape pressEnterFrame;
+        private RectangleShape instructionsFrame;
 
         private Sprite car1;
         private Sprite car2;
@@ -67,7 +69,6 @@ namespace Mold
             pressEnterFrame = new RectangleShape(
                 new Vector2f(pBounds.Width + 40, pBounds.Height + 30)
             );
-
             pressEnterFrame.Origin = new Vector2f(
                 pressEnterFrame.Size.X / 2,
                 pressEnterFrame.Size.Y / 2
@@ -91,6 +92,21 @@ namespace Mold
 
             car4 = new Sprite(carTexture);
             car4.Position = new Vector2f(520, 770);
+
+            instructions = new Text("Eat all the moldy food you can find and dodge traffic to make your monster evolve.", font);
+            instructions.CharacterSize = 20;
+            instructions.FillColor = Color.White;
+            FloatRect iBounds = instructions.GetLocalBounds();
+            instructions.Origin = new Vector2f(iBounds.Left + iBounds.Width / 2, iBounds.Top + iBounds.Height / 2);
+            instructions.Position = new Vector2f(MoldGame.rw.Size.X / 2, 270);
+            
+            instructionsFrame = new RectangleShape(new Vector2f(iBounds.Width + 40, iBounds.Height + 30));
+            instructionsFrame.Origin = new Vector2f(instructionsFrame.Size.X / 2, instructionsFrame.Size.Y / 2);
+            instructionsFrame.Position =  instructions.Position;
+            instructionsFrame.FillColor = Color.Black;
+            instructionsFrame.OutlineColor = Color.Yellow;
+            instructionsFrame.OutlineThickness = 4f;
+            
         }
 
         public void Draw(RenderTarget rt, RenderStates st)
@@ -102,9 +118,12 @@ namespace Mold
 
             rt.Draw(titleFrame);
             rt.Draw(pressEnterFrame);
+            rt.Draw(instructionsFrame);
 
             rt.Draw(title);
             rt.Draw(pressEnter);
+            
+            rt.Draw(instructions);
         }
     }
 }

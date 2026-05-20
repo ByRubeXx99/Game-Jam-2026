@@ -50,7 +50,7 @@ namespace Mold
 			gameOverFrame.OutlineColor = Color.Red;
 			gameOverFrame.OutlineThickness = 4;
 
-			scoreText = new Text("POINTS: " + score, font);
+			scoreText = new Text("FOOD EATED: " + score, font);
 			scoreText.CharacterSize = 36;
 			scoreText.FillColor = Color.White;
 

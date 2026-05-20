@@ -3,6 +3,7 @@ using SFML.Window;
 using SFML.Graphics;
 using System.Collections.Generic;
 using SFML.System;
+using SFML.Audio;
 
 namespace Mold
 {
@@ -59,6 +60,10 @@ namespace Mold
 			currentState = GameState.StartMenu;
 
 			menu = new StartMenu();
+
+			Music m = new Music("Data/music.wav");
+			m.Play();
+			m.Loop = true;
 		}
 
 		public void DeInit()
@@ -169,7 +174,6 @@ namespace Mold
 				if (foodTimer >= nextFoodSpawn)
 				{
 					f.newPos();
-
 					isFoodActive = true;
 				}
 			}
@@ -191,14 +195,13 @@ namespace Mold
 			}
 			else
 			{
-				foreach (CarNew car in Cars)
-				{
-					rw.Draw(car);
-				}
-
 				if (isFoodActive)
 				{
 					rw.Draw(f);
+				}
+				foreach (CarNew car in Cars)
+				{
+					rw.Draw(car);
 				}
 
 				rw.Draw(mo);
