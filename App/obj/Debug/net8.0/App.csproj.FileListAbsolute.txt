@@ -436,3 +436,6 @@ C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\music.w
 >>>>>>> Stashed changes
 C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Mold3.png
 C:\Users\usuari\Documents\GitHub\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Mold4.png
+C:\Users\jangr\Documents\Uni\Trimestre 3\106132 - Programacio II\GameJam\Game-Jam-2026\App\bin\Debug\net8.0\Data\music.wav
+C:\Users\jangr\Documents\Uni\Trimestre 3\106132 - Programacio II\GameJam\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Mold3.png
+C:\Users\jangr\Documents\Uni\Trimestre 3\106132 - Programacio II\GameJam\Game-Jam-2026\App\bin\Debug\net8.0\Data\Textures\Mold4.png

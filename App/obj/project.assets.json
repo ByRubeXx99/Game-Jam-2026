@@ -460,24 +460,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\usuari\\.nuget\\packages\\": {}
+    "C:\\Users\\jangr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\usuari\\Documents\\GitHub\\Game-Jam-2026\\App\\App.csproj",
+      "projectUniqueName": "C:\\Users\\jangr\\Documents\\Uni\\Trimestre 3\\106132 - Programacio II\\GameJam\\Game-Jam-2026\\App\\App.csproj",
       "projectName": "App",
-      "projectPath": "C:\\Users\\usuari\\Documents\\GitHub\\Game-Jam-2026\\App\\App.csproj",
-      "packagesPath": "C:\\Users\\usuari\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usuari\\Documents\\GitHub\\Game-Jam-2026\\App\\obj\\",
+      "projectPath": "C:\\Users\\jangr\\Documents\\Uni\\Trimestre 3\\106132 - Programacio II\\GameJam\\Game-Jam-2026\\App\\App.csproj",
+      "packagesPath": "C:\\Users\\jangr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jangr\\Documents\\Uni\\Trimestre 3\\106132 - Programacio II\\GameJam\\Game-Jam-2026\\App\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\usuari\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\jangr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -496,7 +498,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -523,16 +525,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\jangr\\.dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\usuari\\Documents\\GitHub\\Game-Jam-2026\\App\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
-    }
-  ]
+  }
 }
